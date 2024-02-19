@@ -12,7 +12,6 @@ Welcome to the Exploding Kittens Game, a web-based adaptation ( built using the 
   - [Configuration](#configuration)
 - [Technologies](#technologies)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Project Overview
