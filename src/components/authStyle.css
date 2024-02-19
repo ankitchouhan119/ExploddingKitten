@@ -1,0 +1,131 @@
+.signup-container,
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* height: 100%; */
+
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    
+
+}
+
+.signup-content,
+.login-content {
+   
+    padding: 20px;
+    border-radius: 5px;
+    border: solid 1px black;
+    max-width: 300px;
+    width: 100%;
+}
+
+.signup-content h1,
+.login-content h2 {
+    margin-top: 0;
+    color: black;
+}
+.login-btn-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginarrow{
+    width: 30px;
+    padding-left: 10px;
+    
+}
+.login-btn-div button,
+.create-btn button{
+    width: 50%;
+    padding: 10px;
+    background-color: #4e97e5;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.login-btn-div button span, .create-btn button{
+    font-size: 15px;
+}
+.login-btn-div button:hover,.create-btn button:hover{
+    background-color: white;
+    color: black;
+    border: solid .5px blue;
+    transition: ease-in-out .3s;
+}
+
+.signup-content form div,
+.login-content form div {
+    margin-bottom: 15px;
+}
+.login-content form div input,
+.signup-content form div input{
+    background-color: transparent;
+    border: 1px solid blue;
+    border-radius: 32px;
+    
+}
+
+.signup-content label,
+.login-content label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.signup-content input,
+.login-content input {
+    width: 100%;
+    padding: 5px;
+}
+
+/* .signup-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 3px;
+} */
+.login-img{
+    width: 60px;
+    padding-right: 10px;
+}
+.login-image,.signUp-image{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notuser,
+.already-user{
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    color: rgb(69, 69, 225);
+}
+.notuser:hover{
+    color: rgb(11, 11, 11);
+    cursor: pointer;
+}
+.already-user:hover{
+    color: rgb(11, 11, 11);
+    cursor: pointer;
+}
+.notuserdiv,.alreadyuserdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.create-btn{
+    display: flex;
+    justify-content: center;align-items: center;
+}

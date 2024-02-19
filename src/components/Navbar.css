@@ -1,0 +1,10 @@
+.logout-btn{
+    border-radius: 32px;
+    background-color: red;
+}
+.logout-btn:hover{
+    background-color: white;
+    color: red;
+    transition: ease-in-out .3s;
+}
+
