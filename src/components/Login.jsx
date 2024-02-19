@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {setUser, fetchHighscore} from "../redux/slices/userSlice"
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import baseurl from '../constants';
 
 function Login() {
@@ -13,23 +15,36 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+try{
 
-        const response = await fetch(`${baseurl}/users/login`, {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        })
-        if (!response.ok) {
-            throw new Error('Login failed');}
-        const json = await response.json();
-        localStorage.setItem('user', JSON.stringify(json));
+    const response = await fetch(`${baseurl}/users/login`, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+    })
+    if (!response.ok) {
+        throw new Error('Login failed');}
+    const json = await response.json();
+    localStorage.setItem('user', JSON.stringify(json));
 
-        dispatch(setUser(json));
-        dispatch(fetchHighscore());
-  
-        navigate('/');
+    dispatch(setUser(json));
+    dispatch(fetchHighscore());
+
+    navigate('/');
+} catch(error) {
+    toast.error('Invalid Email or Password',{
+        position:'top-right',
+        autoClose:3000,
+        hideProgressBar:false,
+        closeOnClick:true,
+        pauseOnHover:true,
+        draggable:true,
+        progress:undefined,
+    })
+
+}
 
         if (response.ok) {
             //Save user and token to local storage
@@ -75,6 +90,7 @@ function Login() {
                             <button className='notuser' onClick={ () => navigate("/signup") } >Not a user? Signup</button>
                             </div>
                         </div>
+                        <ToastContainer />
         </div>
     )
 }
